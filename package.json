@@ -11,7 +11,7 @@
       "api:build": "cd udagram/udagram-api && npm run build",
       "api:start": "cd udagram/udagram-api && npm run dev",
       "api:deploy": "cd udagram/udagram-api && npm run deploy",
-      "deploy": "npm run api:deploy && npm run frontend:deploy"
-      
+      "deploy": "npm run api:deploy && npm run frontend:deploy",
+      "env":"eb setenv POSTGRES_USERNAME=${POSTGRES_USERNAME} POSTGRES_PASSWORD=${POSTGRES_PASSWORD} POSTGRES_DB=${POSTGRES_DB} POSTGRES_HOST=${POSTGRES_HOST} AWS_BUCKET=${AWS_BUCKET} JWT_SECRET=${JWT_SECRET}"
   }
 }
