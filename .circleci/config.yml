@@ -21,13 +21,7 @@ jobs:
       - run:
           name: Install Front-End Dependencies
           command: npm run frontend:install
-          # test
-      - run:
-          name: TESTING
-          command: npm run frontend:test
-      - run:
-          name: TESTING e2e
-          command: npm run frontend:e2e
+        
           
       # TODO: Install dependencies in the the backend API          
       - run:
