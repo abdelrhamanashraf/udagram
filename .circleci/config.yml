@@ -48,6 +48,7 @@ jobs:
       - eb/setup
       - aws-cli/setup
       - checkout
+
       
       - run:
           name: Deploy api
@@ -63,12 +64,12 @@ workflows:
   udagram:
     jobs:
       - build
-      - hold:
+      
           filters:
             branches:
               only:
                 - main
-          type: approval
+    
           requires:
             - build
       - deploy:
