@@ -4,8 +4,7 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
-  environment:
-CHROME_BIN: /usr/bin/google-chrome
+ 
   # different jobs are calles later in the workflows sections
 jobs:
   build:
@@ -22,17 +21,19 @@ jobs:
       - run:
           name: Install Front-End Dependencies
           command: npm run frontend:install
-      # TODO: Install dependencies in the the backend API          
-      - run:
-          name: Install API Dependencies
-          command: npm run api:install
-      # test
+          # test
       - run:
           name: TESTING
           command: npm run frontend:test
       - run:
           name: TESTING e2e
-          command: npm run frontend:e2e    
+          command: npm run frontend:e2e
+          
+      # TODO: Install dependencies in the the backend API          
+      - run:
+          name: Install API Dependencies
+          command: npm run api:install
+          
 
       # TODO: Build the frontend app
       - run:
