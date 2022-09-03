@@ -1,6 +1,5 @@
 default_platform: Node.js 14 running on 64bit Amazon Linux 2
-
 deplpy:
   artifacts: www/archive.zip
-
-  
+global:
+  profile: eb-cli
