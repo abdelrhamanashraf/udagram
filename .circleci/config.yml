@@ -4,6 +4,8 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
+  environment:
+CHROME_BIN: /usr/bin/google-chrome
   # different jobs are calles later in the workflows sections
 jobs:
   build:
@@ -54,6 +56,9 @@ jobs:
       - run:
           name: Installing AWS Elasticbeanstalk
           command: sudo apt-get -y -qq update sudo apt-get install python3-pip python-dev build-essential  sudo pip install --upgrade setuptools sudo pip install awsebcli --upgrade
+      - run:
+          name: setting env 
+          command: npm run env
       - run:
           name: Deploy api
           
